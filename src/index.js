@@ -1,7 +1,7 @@
 
 const client_id = `a474c8e6511146f0b4b162dc31c55728`;
 const client_secret = `0a64c27e140f4fd99a525f67aa2c7967`;
-const redirect_uri = `http://127.0.0.1:5500/index.html`;
+const redirect_uri = `https://aalsayad.github.io/spotifynowplaying/`;
 let access_token = null;
 let refresh_token = null;
 
