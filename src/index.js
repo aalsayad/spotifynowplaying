@@ -16,7 +16,7 @@ const authToSpotify = () => {
   url +="&response_type=code";
   url +="&redirect_uri=" + redirect_uri
   url += "&show_dialog=true";
-  url +="&scope=user-read-playback-state user-modify-playback-state user-read-currently-playing app-remote-control streaming playlist-read-private playlist-read-collaborative playlist-modify-private playlist-modify-public user-follow-modify user-follow-read user-read-playback-position user-top-read user-read-recently-played user-library-modify user-library-read user-read-email user-read-private"
+  url +="&scope=user-read-playback-state user-read-currently-playing " //user-modify-playback-state app-remote-control streaming playlist-read-private playlist-read-collaborative playlist-modify-private playlist-modify-public user-follow-modify user-follow-read user-read-playback-position user-top-read user-read-recently-played user-library-modify user-library-read user-read-email user-read-private
   window.location.href = url;
 }
 
