@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Parcel Sandbox</title>
+    <meta charset="UTF-8" />
+	<link rel="stylesheet" href="./src/styles.css">
+  </head>
+
+  <body onload="onPageLoad()">
+    <div id="app">
+      <div class="spotify-box">
+				<img class="current-song-img" src="https://i.scdn.co/image/ab67616d0000b27375f832d2ff1d420cbdeb58ed" ></img>
+				<div class="song-details">
+						<div class="song-title">
+							<div class="song-text">
+								<div class="current-song-name">Right Now</div>
+								<div class="current-song-artist">Ayelle</div>
+							</div>
+							<img class="sound-wave "src="./src/soundwave.gif" autoplay loop/>
+						</div>
+					<div class="progress-bar">
+							<div class="duration current-song-duration">01:30</div>
+							<div class="song-duration-bar">
+								<div id="yellow-progress"></div>
+							</div>
+							<div class="duration total-song-duration">08:34</div>
+						</div>
+				
+				</div>
+      </div>
+    </div>
+	<button class="button" onclick="authToSpotify()">Authenticate to Spotify</button>
+
+    <script src="src/index.js"></script>
+  </body>
+</html>
