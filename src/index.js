@@ -30,6 +30,13 @@ const onPageLoad = () => {
   const code = queryString.slice(6)
   fetchAccessToken(code)
   window.history.pushState("","", redirect_uri);
+
+ } else if (window.location.search.length === 0 && !access_token || !refresh_token) {
+  console.log("no refresh/access token please relogin")
+ } else {
+  access_token = localStorage.getItem("access_token")
+  refresh_token = localStorage.getItem("refresh_token")
+  setInterval(fetchTrackInformation, 1000);
  }
 }
 
@@ -99,8 +106,12 @@ const fetchTrackInformation = async () => {
     };
 
     renderInformation(trackDetails);
-  } else {
-    console.log(result);
+  } else if (result.status === 401) {
+    localStorage.setItem("access_token", null)
+    localStorage.setItem("refresh_token", null)
+    // console.log(access_token, refresh_token)
+    onPageLoad();
+    // console.log(result);
   }
 };
 
