@@ -1,7 +1,8 @@
-
 const client_id = `a474c8e6511146f0b4b162dc31c55728`;
 const client_secret = `0a64c27e140f4fd99a525f67aa2c7967`;
 const redirect_uri = `https://aalsayad.github.io/spotifynowplaying/`;
+
+
 let access_token = null;
 let refresh_token = null;
 
@@ -25,14 +26,16 @@ const authToSpotify = () => {
 //On page load/Redirect get the code and fetch access token
 const onPageLoad = () => {
  console.log("pageLoaded")
+ access_token = localStorage.getItem("access_token")
+ refresh_token = localStorage.getItem("access_token")
  if (window.location.search.length>0){
   const queryString = window.location.search;
   const code = queryString.slice(6)
   fetchAccessToken(code)
   window.history.pushState("","", redirect_uri);
-
- } else if (window.location.search.length === 0 && !access_token || !refresh_token) {
+ } else if ( !access_token || !refresh_token) {
   console.log("no refresh/access token please relogin")
+  console.log(access_token, refresh_token)
  } else {
   access_token = localStorage.getItem("access_token")
   refresh_token = localStorage.getItem("refresh_token")
